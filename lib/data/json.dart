@@ -1,79 +1,175 @@
-  var profile = "https://picsum.photos/200";
+  var profile = "https://via.placeholder.com/200";
 
   var latestBooks = [
     {
       "title" : "The Creative Ideas",
-      "image" : "https://picsum.photos/seed/book1/200/300",
+      "image" : "https://via.placeholder.com/200x300/4A90E2/FFFFFF?text=Book+1",
       "price" : "\$58.99",
-      "ori_price" : "\$120.50"
+      "ori_price" : "\$120.50",
+      "author": "John Smith",
+      "rating": 4.5,
+      "description": "A comprehensive guide to unlocking your creative potential and generating innovative ideas that can change the world.",
+      "pages": 320,
+      "language": "English",
+      "publisher": "Creative Press",
+      "isbn": "978-1-234567-89-0",
+      "genre": "Self-Help"
     },
     {
       "title" : "Follow Me to Ground",
-      "image" : "https://picsum.photos/seed/book2/200/300",
+      "image" : "https://via.placeholder.com/200x300/E94B3C/FFFFFF?text=Book+2",
       "price" : "\$19.99",
-      "ori_price" : "\$120.50"
+      "ori_price" : "\$120.50",
+      "author": "Sarah Johnson",
+      "rating": 4.2,
+      "description": "An enchanting tale of discovery and adventure that takes readers on a journey through mysterious lands.",
+      "pages": 280,
+      "language": "English",
+      "publisher": "Adventure Books",
+      "isbn": "978-1-234567-90-6",
+      "genre": "Fiction"
     },
     {
       "title" : "Snow at Sunset",
-      "image" : "https://picsum.photos/seed/book3/200/300",
+      "image" : "https://via.placeholder.com/200x300/50E3C2/FFFFFF?text=Book+3",
       "price" : "\$29.90",
-      "ori_price" : "\$120.50"
+      "ori_price" : "\$120.50",
+      "author": "Michael Chen",
+      "rating": 4.7,
+      "description": "A beautiful story of love, loss, and redemption set against the backdrop of a snowy mountain village.",
+      "pages": 350,
+      "language": "English",
+      "publisher": "Romance Publishers",
+      "isbn": "978-1-234567-91-3",
+      "genre": "Romance"
     },
     {
       "title" : "The Prince of Thorns",
-      "image" : "https://picsum.photos/seed/book4/200/300",
+      "image" : "https://via.placeholder.com/200x300/F5A623/FFFFFF?text=Book+4",
       "price" : "\$9.99",
-      "ori_price" : "\$120.50"
+      "ori_price" : "\$120.50",
+      "author": "David Wilson",
+      "rating": 4.0,
+      "description": "A dark fantasy epic following the journey of a young prince seeking revenge and redemption.",
+      "pages": 420,
+      "language": "English",
+      "publisher": "Fantasy House",
+      "isbn": "978-1-234567-92-0",
+      "genre": "Fantasy"
     },
     {
       "title" : "The Last Breath",
-      "image" : "https://picsum.photos/seed/book5/200/300",
+      "image" : "https://via.placeholder.com/200x300/9013FE/FFFFFF?text=Book+5",
       "price" : "\$93.90",
-      "ori_price" : "\$120.50"
+      "ori_price" : "\$120.50",
+      "author": "Emma Davis",
+      "rating": 4.8,
+      "description": "A thrilling mystery novel that will keep you on the edge of your seat until the very last page.",
+      "pages": 290,
+      "language": "English",
+      "publisher": "Thriller Books",
+      "isbn": "978-1-234567-93-7",
+      "genre": "Thriller"
     },
     {
       "title" : "The Secrets",
-      "image" : "https://picsum.photos/seed/book6/200/300",
+      "image" : "https://via.placeholder.com/200x300/BD10E0/FFFFFF?text=Book+6",
       "price" : "\$45.50",
-      "ori_price" : "\$120.50"
+      "ori_price" : "\$120.50",
+      "author": "Robert Brown",
+      "rating": 4.3,
+      "description": "Uncover the hidden truths and secrets that shape our world in this thought-provoking non-fiction work.",
+      "pages": 260,
+      "language": "English",
+      "publisher": "Knowledge Press",
+      "isbn": "978-1-234567-94-4",
+      "genre": "Non-Fiction"
     }
   ];
   
 var popularBooks = [
     {
       "title" : "The Way of the Nameless",
-      "image" : "https://picsum.photos/seed/pop1/200/300",
+      "image" : "https://via.placeholder.com/200x300/2E8B57/FFFFFF?text=Pop+1",
       "price" : "\$19.99",
-      "ori_price" : "\$40.00"
+      "ori_price" : "\$40.00",
+      "author": "Lisa Anderson",
+      "rating": 4.6,
+      "description": "An inspiring journey of self-discovery and finding one's true path in life.",
+      "pages": 310,
+      "language": "English",
+      "publisher": "Inspiration Press",
+      "isbn": "978-1-234567-95-1",
+      "genre": "Self-Help"
     },
     {
       "title" : "The Power of You",
-      "image" : "https://picsum.photos/seed/pop2/200/300",
+      "image" : "https://via.placeholder.com/200x300/DC143C/FFFFFF?text=Pop+2",
       "price" : "\$9.99",
-      "ori_price" : "\$23.50"
+      "ori_price" : "\$23.50",
+      "author": "James Miller",
+      "rating": 4.4,
+      "description": "Unlock your inner potential and discover the power that lies within you.",
+      "pages": 240,
+      "language": "English",
+      "publisher": "Motivation Books",
+      "isbn": "978-1-234567-96-8",
+      "genre": "Self-Help"
     },
     {
       "title" : "The Glow",
-      "image" : "https://picsum.photos/seed/pop3/200/300",
+      "image" : "https://via.placeholder.com/200x300/FF6347/FFFFFF?text=Pop+3",
       "price" : "\$26.50",
-      "ori_price" : "\$120.50"
+      "ori_price" : "\$120.50",
+      "author": "Anna Garcia",
+      "rating": 4.9,
+      "description": "A heartwarming story of friendship, love, and finding light in dark times.",
+      "pages": 280,
+      "language": "English",
+      "publisher": "Heartfelt Stories",
+      "isbn": "978-1-234567-97-5",
+      "genre": "Fiction"
     },
     {
       "title" : "The Happy Morning",
-      "image" : "https://picsum.photos/seed/pop4/200/300",
+      "image" : "https://via.placeholder.com/200x300/20B2AA/FFFFFF?text=Pop+4",
       "price" : "\$14.99",
-      "ori_price" : "\$120.50"
+      "ori_price" : "\$120.50",
+      "author": "Thomas Lee",
+      "rating": 4.1,
+      "description": "Start your day right with positive thoughts and morning routines that bring joy.",
+      "pages": 180,
+      "language": "English",
+      "publisher": "Morning Press",
+      "isbn": "978-1-234567-98-2",
+      "genre": "Self-Help"
     },
     {
       "title" : "Undersea World",
-      "image" : "https://picsum.photos/seed/pop5/200/300",
+      "image" : "https://via.placeholder.com/200x300/FF69B4/FFFFFF?text=Pop+5",
       "price" : "\$29.99",
-      "ori_price" : "\$60.50"
+      "ori_price" : "\$60.50",
+      "author": "Maria Rodriguez",
+      "rating": 4.5,
+      "description": "Dive into the mysterious and beautiful world beneath the ocean waves.",
+      "pages": 350,
+      "language": "English",
+      "publisher": "Nature Books",
+      "isbn": "978-1-234567-99-9",
+      "genre": "Non-Fiction"
     },
     {
       "title" : "The Last Breath",
-      "image" : "https://picsum.photos/seed/pop6/200/300",
+      "image" : "https://via.placeholder.com/200x300/8A2BE2/FFFFFF?text=Pop+6",
       "price" : "\$9.99",
-      "ori_price" : "\$120.50"
+      "ori_price" : "\$120.50",
+      "author": "Emma Davis",
+      "rating": 4.8,
+      "description": "A thrilling mystery novel that will keep you on the edge of your seat until the very last page.",
+      "pages": 290,
+      "language": "English",
+      "publisher": "Thriller Books",
+      "isbn": "978-1-234567-93-7",
+      "genre": "Thriller"
     }
   ];

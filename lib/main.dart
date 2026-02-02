@@ -1,8 +1,7 @@
 
+import 'package:book_shop/pages/login_page.dart';
 import 'package:book_shop/theme/colors.dart';
 import 'package:flutter/material.dart';
-
-import 'pages/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primaryColor: primary
       ),
-      home: Home(),
+      home: LoginPage(),
     );
   }
 }
