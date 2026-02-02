@@ -1,6 +1,7 @@
 
 import 'package:book_shop/pages/book_page.dart';
 import 'package:book_shop/pages/cart_page.dart';
+import 'package:book_shop/pages/settings_page.dart';
 import 'package:book_shop/theme/colors.dart';
 import 'package:book_shop/widgets/bottombar_item.dart';
 import 'package:flutter/foundation.dart';
@@ -101,11 +102,7 @@ class _HomeState extends State<Home> {
               HomePage(),
               BookPage(),
               CartPage(),
-              Center(
-                child: Text("Setting",style: TextStyle(
-                  fontSize: 35
-                ),),
-              )
+              SettingsPage(),
             ],
           ),
         ),

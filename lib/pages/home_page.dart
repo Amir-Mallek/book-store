@@ -2,6 +2,8 @@
 import 'dart:ui';
 import 'package:book_shop/data/cart.dart';
 import 'package:book_shop/data/json.dart';
+import 'package:book_shop/pages/book_details_page.dart';
+import 'package:book_shop/pages/search_page.dart';
 import 'package:book_shop/theme/colors.dart';
 import 'package:book_shop/widgets/avatar_image.dart';
 import 'package:book_shop/widgets/book_card.dart';
@@ -32,9 +34,17 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: Container(
                   alignment: Alignment.centerLeft,
-                  child: Icon(Icons.vertical_distribute_rounded,))
+                  child: Icon(Icons.vertical_distribute_rounded, color: Colors.white))
               ),
-              Icon(Icons.search_rounded),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                  );
+                },
+                child: Icon(Icons.search_rounded, color: Colors.white),
+              ),
               SizedBox(width: 15,),
               AvatarImage(profile,
                 isSVG: false, width: 27, height: 27)
@@ -167,48 +177,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _showBookDetails(Map<String, dynamic> book) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(book["title"]!),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.network(
-              book["image"]!,
-              height: 200,
-              errorBuilder: (context, error, stackTrace) => 
-                Container(
-                  height: 200,
-                  color: Colors.grey[300],
-                  child: Icon(Icons.book, size: 50),
-                ),
-            ),
-            SizedBox(height: 16),
-            Text("Price: ${book["price"]}", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            Text("Original: ${book["ori_price"]}", style: TextStyle(decoration: TextDecoration.lineThrough, color: Colors.grey)),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text("Close"),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Cart().addItem(book);
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('${book["title"]} added to cart'),
-                  duration: Duration(seconds: 2),
-                  behavior: SnackBarBehavior.floating,
-                ),
-              );
-            },
-            child: Text("Add to Cart"),
-          ),
-        ],
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => BookDetailsPage(book: book),
       ),
     );
   }
