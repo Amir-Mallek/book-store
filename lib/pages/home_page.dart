@@ -71,12 +71,12 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 10,),
                   Container(
                     margin: EdgeInsets.only(left: 35, right:15),
-                    child: Text("Hi, Sangvaleap", style: TextStyle(color: secondary,fontSize: 23, fontWeight: FontWeight.w600),),
+                    child: Text("Hi, Demo", style: TextStyle(color: secondary,fontSize: 23, fontWeight: FontWeight.w600),),
                   ),
                   SizedBox(height: 10,),
                   Container(
                     margin: EdgeInsets.only(left: 35, right:15),
-                    child: Text("Welcome to Lifemasto!", style: TextStyle(color: secondary,fontSize: 15, fontWeight: FontWeight.w500),),
+                    child: Text("Welcome to BookStore!", style: TextStyle(color: secondary,fontSize: 15, fontWeight: FontWeight.w500),),
                   ),
                   SizedBox(height: 35,),
                   Container(
@@ -115,10 +115,22 @@ class _HomePageState extends State<HomePage> {
                 Positioned(
                   top: 140,
                   left: 0, right: 0,
-                  child: Container(
-                    height: 260,
-                    child: getPopularBooks(),
-                  )
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    physics: BouncingScrollPhysics(),
+                    child: Container(
+                      height: 280,
+                      padding: EdgeInsets.only(left: 15),
+                      child: Row(
+                        children: List.generate(popularBooks.length,
+                        (index) => BookCard(
+                          book: popularBooks[index],
+                          onTap: () => _showBookDetails(popularBooks[index]),
+                        )
+                      ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -142,22 +154,6 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
-  }
-
-  getPopularBooks(){
-    return
-      SingleChildScrollView(
-        padding: EdgeInsets.only(bottom: 5, left: 15),
-        scrollDirection: Axis.horizontal,
-        child: Row(
-            children: List.generate(popularBooks.length, 
-            (index) => BookCard(
-              book: popularBooks[index],
-              onTap: () => _showBookDetails(popularBooks[index]),
-            )
-          ),
-        ),
-      );
   }
 
   getLatestBooks(){

@@ -15,6 +15,7 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
   bool _isLoading = false;
   bool _rememberMe = false;
+  bool _isPasswordVisible = false;
 
   @override
   void dispose() {
@@ -129,9 +130,12 @@ class _LoginPageState extends State<LoginPage> {
                               labelText: 'Password',
                               prefixIcon: Icon(Icons.lock, color: primary),
                               suffixIcon: IconButton(
-                                icon: Icon(Icons.visibility),
+                                icon: Icon(_isPasswordVisible ? Icons.visibility_off : Icons.visibility),
                                 onPressed: () {
                                   // Toggle password visibility
+                                  setState(() {
+                                    _isPasswordVisible = !_isPasswordVisible;
+                                  });
                                 },
                               ),
                               border: OutlineInputBorder(
@@ -142,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
                                 borderSide: BorderSide(color: primary, width: 2),
                               ),
                             ),
-                            obscureText: true,
+                            obscureText: !_isPasswordVisible,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Please enter your password';
